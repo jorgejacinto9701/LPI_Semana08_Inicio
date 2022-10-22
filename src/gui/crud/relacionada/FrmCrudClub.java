@@ -131,10 +131,7 @@ public class FrmCrudClub extends JFrame {
 		lblMantenimientoClub.setBounds(23, 11, 744, 59);
 		contentPane.add(lblMantenimientoClub);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(23, 251, 744, 323);
-		contentPane.add(scrollPane);
-		
+
 	
 
 
