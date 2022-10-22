@@ -1,5 +1,6 @@
 package gui.crud.relacionada;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.util.ResourceBundle;
@@ -11,6 +12,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
@@ -18,16 +20,8 @@ import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.EmptyBorder;
 
 import util.JComboBoxBD;
-import java.awt.Color;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseListener;
-import java.awt.event.MouseEvent;
 
-public class FrmCrudClub extends JFrame implements ActionListener, MouseListener {
+public class FrmCrudClub extends JFrame {
 
 	/**
 	 * 
@@ -47,7 +41,6 @@ public class FrmCrudClub extends JFrame implements ActionListener, MouseListener
 	private JComboBoxBD cboPais;
 	private ResourceBundle rb = ResourceBundle.getBundle("combo");
 	private JLabel lblMantenimientoClub;
-	private JTable table;
 	
 	/**
 	 * Launch the application.
@@ -102,19 +95,16 @@ public class FrmCrudClub extends JFrame implements ActionListener, MouseListener
 		txtFecha.setColumns(10);
 
 		btnIngresar = new JButton("Ingresar");
-		btnIngresar.addActionListener(this);
 		btnIngresar.setIcon(new ImageIcon(FrmCrudClub.class.getResource("/iconos/add.gif")));
 		btnIngresar.setBounds(637, 83, 130, 30);
 		contentPane.add(btnIngresar);
 
 		btnActualizar = new JButton("Actualizar");
-		btnActualizar.addActionListener(this);
 		btnActualizar.setIcon(new ImageIcon(FrmCrudClub.class.getResource("/iconos/edit.gif")));
 		btnActualizar.setBounds(637, 168, 130, 30);
 		contentPane.add(btnActualizar);
 
 		btnEliminar = new JButton("Eliminar");
-		btnEliminar.addActionListener(this);
 		btnEliminar.setIcon(new ImageIcon(FrmCrudClub.class.getResource("/iconos/delete.gif")));
 		btnEliminar.setBounds(637, 127, 130, 30);
 		contentPane.add(btnEliminar);
@@ -145,19 +135,7 @@ public class FrmCrudClub extends JFrame implements ActionListener, MouseListener
 		scrollPane.setBounds(23, 251, 744, 323);
 		contentPane.add(scrollPane);
 		
-		table = new JTable();
-		table.addMouseListener(this);
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"ID", "Nombre", "Fecha Creaci\u00F3n", "Estado", "Pa\u00EDs"
-			}
-		));
-		table.getColumnModel().getColumn(1).setPreferredWidth(164);
-		table.getColumnModel().getColumn(2).setPreferredWidth(133);
-		scrollPane.setViewportView(table);
-		
+	
 
 
 	}
@@ -171,38 +149,7 @@ public class FrmCrudClub extends JFrame implements ActionListener, MouseListener
 		txtFecha.setText("");
 		txtNombre.requestFocus();
 	}
-	public void actionPerformed(ActionEvent e) {
-		if (e.getSource() == btnActualizar) {
-			actionPerformedBtnActualizarJButton(e);
-		}
-		if (e.getSource() == btnEliminar) {
-			actionPerformedBtnEliminarJButton(e);
-		}
-		if (e.getSource() == btnIngresar) {
-			actionPerformedBtnIngresarJButton(e);
-		}
-	}
-	protected void actionPerformedBtnIngresarJButton(ActionEvent e) {
-	}
-	protected void actionPerformedBtnEliminarJButton(ActionEvent e) {
-	}
-	protected void actionPerformedBtnActualizarJButton(ActionEvent e) {
-	}
-	public void mouseClicked(MouseEvent e) {
-		if (e.getSource() == table) {
-			mouseClickedTableJTable(e);
-		}
-	}
-	public void mouseEntered(MouseEvent e) {
-	}
-	public void mouseExited(MouseEvent e) {
-	}
-	public void mousePressed(MouseEvent e) {
-	}
-	public void mouseReleased(MouseEvent e) {
-	}
-	protected void mouseClickedTableJTable(MouseEvent e) {
-	}
+	
 }
 
 
