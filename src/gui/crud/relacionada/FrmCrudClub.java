@@ -12,7 +12,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.UIManager;
@@ -37,7 +36,6 @@ public class FrmCrudClub extends JFrame {
 	// -1 indica que no se ha selecionado nada en la grilla o Jtable
 	int idSeleccionado = -1;
 
-	int hoveredRow = -1, hoveredColumn = -1;
 	private JComboBoxBD cboPais;
 	private ResourceBundle rb = ResourceBundle.getBundle("combo");
 	private JLabel lblMantenimientoClub;
